@@ -24,6 +24,8 @@ namespace Cheers
                 }
                 System.Console.WriteLine("Give me " + a + " " + letter);
             }
+            name = name.ToUpper();
+            System.Console.WriteLine(name + " is just GRAND!");
             System.Console.WriteLine("Presss any key to exit");
             System.Console.ReadKey();
         }
