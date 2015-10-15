@@ -15,16 +15,18 @@ namespace Cheers
             System.Console.WriteLine("When is your birthday? (mm/dd)");
             String inputBirthday = System.Console.ReadLine();
             System.Console.WriteLine("Hi, " + name);
-            name = name.ToLower();
-            foreach (char letter in name)
+            foreach (char letter in name.ToLower())
             {
-                string a = "a";
-                bool isVowel = "aefhilmnorsx".IndexOf(letter) >= 0;
-                if (isVowel)
+                if (Char.IsLetter(letter))
                 {
-                    a = "an";
+                    string a = "a";
+                    bool isVowel = "aefhilmnorsx".IndexOf(letter) >= 0;
+                    if (isVowel)
+                    {
+                        a = "an";
+                    }
+                    System.Console.WriteLine("Give me " + a + "... " + letter);
                 }
-                System.Console.WriteLine("Give me " + a + " " + letter);
             }
             name = name.ToUpper();
             System.Console.WriteLine(name + " is just GRAND!");
