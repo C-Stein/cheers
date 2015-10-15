@@ -12,6 +12,8 @@ namespace Cheers
         {
             System.Console.WriteLine("Hello There! What's your name?");
             string name = System.Console.ReadLine();
+            System.Console.WriteLine("When is your birthday? (mm/dd)");
+            String inputBirthday = System.Console.ReadLine();
             System.Console.WriteLine("Hi, " + name);
             name = name.ToLower();
             foreach (char letter in name)
@@ -26,6 +28,22 @@ namespace Cheers
             }
             name = name.ToUpper();
             System.Console.WriteLine(name + " is just GRAND!");
+            DateTime birthday = DateTime.Parse(inputBirthday);
+            DateTime today = DateTime.Today;
+            DateTime next = new DateTime(today.Year, birthday.Month, birthday.Day);
+            if (next < today)
+            {
+                next = next.AddYears(1);
+            }
+            int numDays = (next - today).Days;
+            if (numDays == 0)
+            {
+                System.Console.WriteLine("Happy Birthday!!");
+            }
+            else
+            {
+                System.Console.WriteLine("It is " + numDays + " days until your birthday!");
+            }
             System.Console.WriteLine("Presss any key to exit");
             System.Console.ReadKey();
         }
